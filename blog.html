@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Blog</title>
-                <link rel="stylesheet" href="styles/style.css">
-                <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/cecc6c5222.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -13,7 +14,7 @@
 
     <header class="blogHeader">
         <div class="wrapper">
-            <nav>
+            <nav class="headerNav">
                 <ul>
                     <li>
                         <h3 class="logo">mindn’Soul</h3>
@@ -34,6 +35,31 @@
             </nav>
             <h2>Blog</h2>
         </div>
+
+<!-- HAMBURGER -->
+        
+        <div class="ham" tabindex="0">
+            <i class="fas fa-bars">
+                <p class="sr-only">Click to open navigation menu</p>
+            </i>
+            <nav class="hamMenu" tabindex="0">
+                <ul>
+                    <li tabindex="0">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="#About">About</a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="#">Blog</a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
     </header>
 
     <!-- BLOG ~ BLOG ~ BLOG ~ BLOG ~ BLOG -->
@@ -66,15 +92,15 @@
             <div class="comments">
                 <h3>Comments:</h3>
                 <div class="davin">
-                    <!-- <img src="./assets/comment-image.jpg" alt="profile picture"> -->
+                    <img src="./assets/comment-image.jpg" alt="profile picture">
                     <p class="commentDate">Tuesday October 9th, 2019 by Davin</p>
                     <p>
                         Fusce vehicula dolor arcu, sit amer blandit dolot mollis nec. Donec viverra eleidend lacus, vitae ullamcorper metus. Sed sollicitudin ipsum quis nunc sollicitudin ultrices. Donec euismod scelerisque ligula. Maecenas eu varius risus..
                     </p>
                 </div>
                 <div class="Lisa">
-                    <!-- <img src="./assets/comment-image2.jpg" alt="profile picture"> -->
-                    <p "commentDate">Wednesday October 10th, 2019 by Lisa</p>
+                    <img src="./assets/comment-image2.jpg" alt="profile picture">
+                    <p class = "commentDate">Wednesday October 10th, 2019 by Lisa</p>
                     <p>
                         Donec viverra eleidend lacus, vitae ullamcorper metus. Sed sollicitudin ipsum quis nunc sollicitudin ultrices. Donec euismod scelerisque ligula.
                     </p>
@@ -84,13 +110,12 @@
                 <form action="" class="blogForm">
                     <fieldset>
                         <label for="name" class="visuallyHidden">Name</label>
-                        <input type="text" name="" id="name" placeholder="Name" required>
+                        <input type="text" name="name" id="name" placeholder="Name" required class="nameInput"> 
 
                         <label for="email" class="visuallyHidden">Email</label>
-                        <input type="email" name="" id="email" placeholder="Email address" required>
+                        <input type="email" name="email" id="email" placeholder="Email address" required>
 
-                        <textarea name="" id="comment" cols="30" rows="10" placeholder="Comment" class="visuallyHidden">Comment</textarea>
-
+                        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Comment">Comment</textarea>
                     </fieldset>
                     <button type="submit">Post comment</button>
                 </form>
@@ -108,7 +133,7 @@
             <h5>recent posts</h5>
             <ul>
                 <li>
-                    Donec facilis tortor ut
+                    Donec facilisis tortor ut
                 </li>
                 <li>
                     Augue lacinia at viverra
@@ -123,14 +148,11 @@
         </aside>
     </main>
 
-    <footer>
-        <p>
-            Copyright ⓒ 2019 HackerYou
-        </p>
-    </footer>
+<footer class="copyright">
+    <p>
+        Copyright ⓒ 2019 HackerYou
+    </p>
+</footer>
 
-
-
-        
 </body>
 </html>

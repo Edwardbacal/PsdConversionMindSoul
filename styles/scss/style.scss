@@ -3,17 +3,9 @@
 @import 'mixins';
 
 
-// NOTES
-
-//add a type of submit to form buttons
-// The Read More buttons should probably be anchor tags.
-// style a instead of li
 // mixins:
 // titleText ($fontSize, $letterSpacing, $lineHeight)
 // mainText ($fontSize, $letterSpacing, $lineHeight) 
-
-
-// header nav is breaking out the wrapper and fucking with widths
 
 // VARIABLES 
 
@@ -49,14 +41,52 @@ li {
     @include mainText (20px, 2px, 32px);
 }
 
+button {
+    @include titleText (25px , 4px, 1)
+    text-transform: capitalize;
+    color: $textColor;
+    background-color: $background3;
+    border: none;
+    padding: 10px;
+    margin: 15px 0;
+        &:hover {
+            background-color: $accentColor;
+        }
+        &:focus {
+            background-color: $accentColor;
+        }
+}
+
 li a {
     @include mainText (20px, 1px, 29px);
     text-transform: uppercase;
     font-weight: 700;
+        &:hover {
+            border-bottom: 3px solid $accentColor;
+            padding-bottom: 10px;
+            font-weight: 300;
+            }
+}
+
+li:focus{
+        border-bottom: 3px solid $accentColor;
+        margin-bottom: 16px;
+        font-weight: 300;
+        outline: 0;
+}
+
+li:focus a{
+    font-weight: 300;
+}
+
+
+.contactInfo li:focus {
+    margin-bottom: -10px;
+    padding-bottom: 7px;
 }
 
 a {
-        text-decoration: none;
+    text-decoration: none;
 }
 
 .highlight {
@@ -71,7 +101,7 @@ fieldset {
     font-size: 0px;
 }
 
-// GLOBAL LAYOUT STYLES - HEADER
+// ~~~~~~~~~  GLOBAL LAYOUT STYLES
 
 .wrapper {
     width: 80%;
@@ -83,14 +113,13 @@ fieldset {
 //     width: 100%;
 // }
 
-nav ul{
+nav ul {
     display: flex;
     justify-content: space-between;   
     padding: 25px 0;
-}
-
-ul li:first-child {
-    padding-right: 30%;
+        li:first-child {
+        padding-right: 30%;
+        }
 }
 
 header {
@@ -102,31 +131,114 @@ h2 {
     padding-top: 20%;
 }
 
-.newAdventures,
+.newAdventure,
 .blurbs,
-.footerText,
+.freeTrials,
 .blog,
 .getInTouch {
     background-color: $background2;
 }
 
 .gallery,
-.newLocations,
-.copyright,
+.readMore,
+footer,
 .contactForm {
     background-color: $background1;
 }
 
-// GLOBAL PSEUDO-SELECTORS
-
-li a :focus,
-li a:hover {
-    background-color:  red;
+footer {
+    padding: 5px 0 10px 0;
+    text-align: center;
+        p {
+            font-weight: 300;
+        }
 }
 
-// HOME ~ HOME ~ HOME ~ HOME ~ HOME ~ HOME ~
+.skipLink {
+    position: absolute;
+    opacity: 0;
+    z-index: 999;           
+    background: white;
+    color: black;
+        &:focus {
+            opacity: 1;
+    }
+}
 
-// HEADER
+//  HAMBURGER ~~~~~~~~~~~~~~~~~~~
+
+ .ham {
+     display: none;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 10;
+             i {
+                font-size: 50px;
+                color: $textColor;
+                padding: 20px 70px;
+                margin: 0;
+                width: 0;
+                height: 0;
+             }
+        }
+
+.hamMenu ul {
+    display: none;
+    flex-direction: column;
+    text-align: right;
+    background-color: $background2;
+    padding: 121px 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+         li,
+         li:first-child {
+        padding-right: 0px;
+    }
+        li {
+            padding: 20px 0px;
+        }
+        a {
+            font-size: 20px;
+        }
+}
+
+   
+
+// ~~~~~~~~~  GLOBAL FORMS & BUTTONS
+
+input {
+    background: transparent;
+    border: solid $accentColor;
+    border-width: 0 0 3px 0;
+    width: 43%;
+    padding: 20px 30px;
+}
+
+input::placeholder {
+        color: $textColor;
+        opacity: 1;
+}
+
+textarea {
+    background: transparent;
+    border: 3px solid $accentColor;
+    width: 95%;
+    height: 300px;
+    margin: 30px 0;
+    padding: 5%;
+}
+
+form button{
+    width: 95%;
+}
+
+
+// HOME ~ HOME ~ HOME ~ HOME ~ HOME ~ HOME ~~~~~~~~~~ 
+
+// ~~~~~~~~~ HEADER
 
 .homeHeader {
     background-image: url(../assets/home-image-1.jpg);
@@ -135,39 +247,49 @@ li a:hover {
 h1 {
     @include titleText (115px, 1, 1);
     padding-top: 30px;
-}
-
-h1 span {
-    @include mainText (50px, 1, .5)
-    display: block;
+        span {
+            @include mainText (50px, 1, .5)
+            display: block;
+        }
 }
 
 .welcome {
     display: flex;
-    margin: 8% 10% 0 0;
+    margin: 115px 10% 0 0;
+        img{
+            width: 46%;
+            margin-right: 35px;
+            min-width: 489px;
+        }
 }
 
-.welcome img{
-    width: 48%;
-    margin-right: 30px;
+.nameInput {
+    margin-right: 9%;
 }
 
-// NEW ADVENTURES
+// ~~~~~~~~~ NEW ADVENTURE
 
-.newAdventuresContainer {
+.newAdventure {
+   padding: 15% 0 10%;
+}
+.newAdventureContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-content: space-between;
-    height: 600px;
-    padding-top: 17%;
+        img {
+            box-shadow: -20px 20px  0px  $background3;
+            width: 28%;
+            height: 28%;
+    }
 }
 
 .newAdventureText {
     width: 65%;
     margin-right: 5%;
 }
-// GALLERY
+
+// ~~~~~~~~~ GALLERY
 
 .galleryContainer {
     font-size: 0px;
@@ -180,14 +302,106 @@ h1 span {
     width: 32%;
 }
 
+// BLURBS ~~~~~~~~~~~~~~~~~~
 
-footer img {
+.blurbs {
+    padding: 7% 0 10% 0;
+}
+
+.blurbContainer {
+    display: flex;
+    flex-wrap: wrap;
+        div {
+            flex: 1 1 40%;
+        }
+}
+
+.blurbContainer i {
+    font-size: 30px;
+    color: $textColor;
+    background-color: $background3;
+    padding: 10px;
+    border-radius: 50%;
+    float: left;
+    margin: 0 20px 30% 0;
+}
+
+.blogBlurb i{
+    padding: 10px 15px;
+}
+
+.communityBlurb i{
+    font-size: 28px;
+    padding: 12px 9px;
+}
+
+.getInBlurb i {
+    font-size: 25px;
+    padding: 15px;
+}
+
+// ~~~~~~~~~  READ MORE
+
+.readMore {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftColumn,
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    width: 43%;
+    position: relative;
+        img {
+            width: 100%;
+        }
+}
+
+.leftColumn {
+    top: -40px;
+        img {
+            box-shadow: 30px 30px 0px -10px $accentColor;
+        }
+        .textBox{
+            text-align: right;
+            padding: 10% 0 5% 10%;
+             p {
+                    padding: 5px 0 15px 50px;
+                    text-align: left;
+                }
+        }
+}
+
+.rightColumn {
+    bottom: -40px;
+     img {
+            box-shadow: -30px 30px 0px -10px $accentColor;
+    }
+     .textBox{
+            padding: 7.5% 10% 7.5% 0;
+                p {
+                    padding: 10px 20px 10px 0;
+                }
+        }
+}
+
+// ~~~~~~~~~ FREE TRIALS
+
+.freeTrials img {
     width: 100%;
 }
 
+.freeTrialsText {
+    padding: 7% 15%;
+    text-align: center;
+        p {
+            text-align: left;
+        }
+}
 
 
-// BLOG
+// BLOG ~ BLOG ~ BLOG ~ BLOG ~ BLOG
 
 .blogHeader {
     background-image: url(../assets/blog-image-1.jpg);
@@ -203,25 +417,50 @@ footer img {
     border-right: 5px solid $background3;
     border-bottom: 5px solid $background3;
     position: relative;
-}
-
-.post img {
-    width: calc(100% - 15px);
-    box-shadow: 40px 40px  0px -20px $background3;
-    position: absolute;
-    top: -200px;
+        img {
+            width: calc(100% - 15px);
+            box-shadow: 40px 40px  0px -20px $background3;
+            position: absolute;
+            top: -200px;
+        }
 }
 
 .discover {
-    margin: 50% 5% 5% 10%;
+    margin: 50% 8% 4% 10%;
+}
+
+.discover p {
+    padding: 20px 0;
+}
+
+.discover p:first-of-type {
+    font-style: italic;
+    padding-top: 0;
+        span {
+            font-weight: 700;
+        }
 }
 
 .comments {
-    margin: 5% 5% 5% 10%;
+    margin: 5% 8% 5% 10%;
+}
+
+.comments img {
+    float: left;
+    padding: 1.5% 5% 140px 0;
+}
+
+.commentDate {
+    color: $accentColor;
+    padding-bottom: 5px;
+}
+
+.davin{
+    padding: 40px 0 120px 0; 
 }
 
 .blogForm {
-    margin: 5% 0 10% 10%;
+    margin: 0 0 10% 10%;
 }
 
 // ASIDE
@@ -229,31 +468,29 @@ footer img {
 aside {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 23%;
     position: absolute;
     right: 0;
     top: calc(100vh + 20px);
     background-color: $background3;
-    padding: 0 0 40px 20px ;
-
-}
-
-aside img {
-    width: 100%;
-    margin: -20px 0 20px 0;
+    padding: 0 0 30px 30px ;
+        img {
+            width: 100%;
+            margin: -20px 0 20px 0;
+        }    
 }
 
 h5 {
-    @include titleText (20px, 1, 1);
+    @include titleText (25px, 4px, 1);
     color: $textColor;
     margin: 10px 0;
 }
 
 aside p,
 aside li {
-    @include mainText (15px, 1, 1.5);
+    @include mainText (16px, 1, 1.5);
     font-weight: 300;
-    padding-right: 5px;
+    padding-right: 20px;
 }
 
 aside li::before {
@@ -261,10 +498,291 @@ aside li::before {
     color: $accentColor;
 }
 
-
-
-
+// CONTACT ~~~~~~~~~~~~~~~~~~~~
 
 .contactHeader {
     background-image: url(../assets/contact-image-1.jpg);
 }
+
+.getInTouch {
+    position: relative;
+    height: 75vh;
+}
+
+.contactForm { 
+    width: 60%;
+    padding: 5% 2.5% 5% 5%;
+    position: absolute;
+    left: 6%;
+    top: - 200px;
+    box-shadow: 40px 40px  0px -20px $accentColor;
+}
+
+.contactInfo {
+    width: 260px;
+    float: right;
+    margin: 8%;
+        p:first-of-type{
+            padding: 15px 0 20px 0;
+        }
+        ul {
+            width: 167px;
+            display: flex;
+            justify-content: space-between;
+                i {
+                    color: $accentColor;
+                    font-size: 25px;
+                }
+        }
+}
+
+//  MEDIA QUERIES
+
+ @media(max-width: 1133px) {
+
+        header {
+            height: 77vh;
+        }
+
+        nav li a{
+            font-size: 15px;
+        }    
+
+        h1 {
+            font-size: 90px;
+                span {
+                    font-size: 30px;
+                }
+        }
+
+        h3 {
+            font-size: 35px;
+        }
+
+        h4 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        .welcome img {
+            width: 406px;
+            min-width: 0;
+        }
+
+        .newAdventureContainer img {
+            margin-top: 5%;
+        }
+
+        .blurbContainer i{
+            margin: 0 15px 50% 2%;
+        }
+
+        .contactForm {
+            width: 50%;
+        }
+    }
+
+    @media(max-width: 960px) {
+
+        .wrapper {
+            width: 90%;
+        }
+
+        .headerNav {
+            display: none;
+        }
+
+        .ham {
+            display: flex;
+                &:hover ul,
+                &:focus ul {
+                    display: flex;
+                }
+        }
+
+        header {
+            height: 57.5vh;
+        }
+
+        .welcome {
+            flex-direction: column-reverse;
+            margin: 0 10%;
+            padding-top: 20px;
+        }
+
+        .blurbContainer,
+        .newAdventureContainer {
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
+                i {
+                    margin-bottom: 15%;
+                }
+        }
+
+        .newAdventureContainer img {
+            width: 55%;
+        }
+
+        aside {
+            width: 33%;
+        }
+
+        .blogPost {
+            width: 65%;
+            padding-top: 30px;
+        }
+
+        .comments {
+            width: 135%;
+        }
+        
+        .blogForm {
+            width: 142.5%;
+        }
+
+        .getInTouch {
+            height: 100vh;
+        }
+
+        .contactHeader h2 {
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .contactForm {
+            width: 80%;
+        }
+
+        .contactInfo {
+            margin: 500px 0 0 0;
+            width: 50%;
+        }
+
+    }
+
+       @media(max-width: 700px) {
+            
+            h3 {
+                font-size: 25px;
+            }
+
+            h4 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            button {
+                font-size:  20px;
+            }
+
+            .welcome {
+                    align-items: center;
+                }
+
+                .newAdventureText {
+                    width: 80%;
+                    padding-top: 20px;
+                }
+
+            .galleryContainer {
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                    img{
+                        width: 70%;
+                        margin: 20px 0;
+                    }
+            }
+
+                .blurbContainer i {
+                    margin-bottom: 20%;
+                }
+
+                .readMore {
+                    flex-direction: column;
+                }
+
+                .leftColumn,
+                .rightColumn {
+                    width: 90%;
+                }
+
+                .rightColumn {
+                    margin: -100px 10% 38px 10%;
+                }
+
+                .blogPost {
+                    width: 60%;
+                }
+
+                .post img {
+                    top:  -90px;
+                }
+                
+                aside {
+                    width: 40%;
+                    padding-left: 10px;
+                        p,
+                        li {
+                            font-size: 12px;
+                        }
+                        h5 {
+                            font-size: 20px;
+                        }
+                 }
+
+                 .contactInfo {
+                     display: block;
+                 }
+
+                 .contactForm{
+                     top: -120px;
+                 }
+        }
+
+         @media(max-width: 551px) {
+
+            h1 {
+            font-size: 65px;
+                span {
+                    font-size: 20px;
+                }
+            }
+
+            h3 {
+                font-size: 25px;
+                line-height: 1.5;
+            }
+
+            p {
+                font-size: 12px;
+                line-height: 2;
+            }
+
+            .ham i {
+                font-size: 40px;
+            }
+
+            .blurbContainer i {
+                margin-bottom: 30%;
+            }
+
+            input,
+            textarea {
+                font-size:  14px;
+                padding: 15px;
+            }
+
+            .contactInfo {
+                margin-top: 500px;
+                width: 66%;
+        }
+    }

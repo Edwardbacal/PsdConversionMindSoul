@@ -6,17 +6,22 @@
         <title>Edward Bacal Project 2</title>
         <link rel="stylesheet" href="styles/style.css">
       <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/cecc6c5222.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<!-- notes -->
+      <!-- HEADER ~ HEADER ~ HEADER ~ HEADER -->
 
       <header class="homeHeader">
+            
+            <button tabindex="0" class = "skipLink">
+                  <a href="#about" tabindex="0">Skip to main content.</a>
+            </button>
             <div class="wrapper">
-                  <nav>
+                  <nav class="headerNav">
                         <ul>
                               <li>
-                                     <h3 class="logo">mindn’Soul</h3>
+                                    <h3 class="logo">mindn’Soul</h3>
                               </li>
                               <li tabindex="0">
                                     <a href="#" class="highlight">home</a>
@@ -36,21 +41,45 @@
             
             <div class="welcome">
                   <img src="./assets/Group.jpg" alt="person seated in meditation">
-                  <h1><span>welcome to</span>mindn’Soul</h1>
+                  <h1><span>welcome to</span>Mindn’Soul</h1>
+            </div>
+
+<!-- HAMBURGER -->
+
+            <div class="ham" tabindex="0">
+                  <i class="fas fa-bars">
+                        <p class="sr-only">Click to open navigation menu</p>
+                  </i>
+                  <nav class="hamMenu" tabindex="0">
+                        <ul>
+                              <li tabindex="0">
+                                    <a href="#">Home</a>
+                              </li>
+                              <li tabindex="0">
+                                    <a href="#about">About</a>
+                              </li>
+                              <li tabindex="0">
+                                    <a href="blog.html">Blog</a>
+                              </li>
+                              <li tabindex="0">
+                                    <a href="contact.html">Contact</a>
+                              </li>
+                        </ul>
+                  </nav>
             </div>
       </header>
 
 <!-- NEW ADVENTURES ~ NEW ADVENTURES ~ NEW ADVENTURES  -->
 
-      <section class="newAdventures" id="about">
+      <section class="newAdventure" id="about">
             <div class="wrapper" >
-                  <div class="newAdventuresContainer">
+                  <div class="newAdventureContainer">
                         <div class="newAdventureText">
                               <h3>New adventure</h3>
                               <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla pulvinar tortor nulla elementum eleifend. Vestibulum consequat vestibulum felis pharetra luctus. Quisque interdum orci quis convallis dapibus nulla pulvinar tortor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla pulvinar tortor nulla elementum eleifend. Vestibulum consequat vestibulum felis pharetra luctus. Quisque interdum orci quis convallis.                    
+                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla pulvinar tortor nulla elementum eleifend. Vestibulum consequat vestibulum felis pharetra luctus. Quisque interdum orci quis convallis dapibus nulla pulvinar tortor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla pulvinar tortor nulla elementum eleifend. Vestibulum consequat vestibulum felis pharetra luctus. Quisque interdum orci quis convallis.                   
                               </p>
-                              <button>find out more</button>
+                              <button tabindex="0">Find out more</button>
                         </div>
                         <img src="./assets/small-box.jpg" alt="a row of people in a yoga pose">
                   </div>
@@ -74,8 +103,9 @@
       <section class="blurbs">
             <div class="wrapper">
                   <div class="blurbContainer">
-                        <div>
+                        <div class="custom">
                               <a href="">
+                                    <i class="fas fa-home"></i>
                                     <h4>Customized offers</h4>
                               </a>
                               <p>
@@ -83,32 +113,37 @@
                               </p>
                         </div>
 
-                        <div>
-                        <a href="">
-                              <h4>Community</h4>
-                        </a>
+                        <div class="communityBlurb" >
+                              <a href="">
+                                    <i class="fas fa-users"></i>
+                                    <h4>Community</h4>
+                              </a>
                               <p>
                               Ut felis eros, vehicula eu magna nec, laoreet blandit nisi. Fusce auctor erat ac sagittis velit sem, sit
                               amet imperdiet dolor placerat.
                               </p>
                         </div>
 
-                        <div>
-                        <a href="blog.html">
-                              <h4>blog</h4>
-                        </a>
-                              <p>
+                        <div class="blogBlurb">
+                              <a href="blog.html">
+                                    <i class="fas fa-file"></i>
+                                    <h4>blog</h4>
+                              </a>
+                                    <p>
                                     Ut felis eros, vehicula eu magna nec, laoreet blandit nisi. Fusce auctor erat ac sagittis mattis. Mauris tempis elit sem, sit amet imperdiet dolor placerat.
                               </p>
                         </div>
-                        <div>
-                        <a href="contact.html">
-                              <h4>Get in touch</h4>
-                        </a>
-                        <p>
+
+                        <div class="getInBlurb">
+                              <a href="contact.html">
+                                    <i class="fas fa-phone"></i>
+                                    <h4>Get in touch</h4>
+                              </a>
+                              <p>
                               Ut felis eros, vehicula eu magna nec, laoreet blandit nisi. Fusce auctor erat ac sagittis mattis. Mauris tempis velit sem, sit amet imperdiet dolor placerat.
                               </p>
                         </div>
+
                   </div>
             </div>
       </section>
@@ -116,56 +151,56 @@
 <!-- READMORE ~ READMORE ~ READMORE ~ READMORE ~ READMORE -->
 
       <section class="readMore">
-            <img src="./assets/left-image.jpg" alt="three women in a yoga studio">
-            <div class="newLocations">
-                  <div class="wrapper">
-                        <h3>group programs</h3>
-                        <p>
-                              Lorem ipsum dolor sit amer, consectetur adipisicing elir. In et risus nex orci ornare condimentum. Nam suscipit odio lorem, id vestibulum lacus tristique eu. Sed urna ex.
-                        </p>
-                        <button>
-                              read more
-                        </button>
-                  </div>
-            </div>
-            
-            <div class="newLocations">
-                  <div class="wrapper">
+
+            <div class="leftColumn">
+                  <img src="./assets/left-image.jpg" alt="three women in a yoga studio">
+                  <div class="textBox">
                         <h3>
                               New locations
                         </h3>
                         <p>
-                              Lorem ipsum dolor sit amer, consectetur adipisicing elir. In et risus nex orci ornare condimentum. Nam suscipit odio lorem, id vestibulum lacus tristique eu. Sed urna ex.
+                              Lorem ipsum dolor sit amer, consectetur adipisicing elir. In et risus nex orci ornare condimentum. Nam
+                              suscipit odio lorem, id vestibulum lacus tristique eu. Sed urna ex.
                         </p>
-                        <button>
-                              read more
-                        </button>
+                        <button> read more</button>
                   </div>
             </div>
 
+
+            <div class="rightColumn">
+                  <div class="textBox">
+                        <h3>group programs</h3>
+                        <p>
+                              Lorem ipsum dolor sit amer, consectetur adipisicing elir. In et risus nex orci ornare condimentum. Nam suscipit odio lorem, id vestibulum lacus tristique eu. Sed urna ex.
+                        </p>
+                        <button>read more</button>
+                  </div>
                   <img src="./assets/right-image.jpg" alt="man in yoga pose">
+            </div>
+      
+
       </section>
       
 <!-- FOOTER ~ FOOTER ~ FOOTER ~ FOOTER ~ FOOTER -->
-      <footer>
+      <section class="freeTrials">
             <img src="./assets/banner-image.jpg" alt="group of people doing yoga on the beach">
-            <div class="footerText">
+            <div class="freeTrialsText">
                   <h3>
-                        free trials
+                        Free trials
                   </h3>
                   <p>
                         Lorem ipsum dolor sit amer, consectetur adipisicing elir. In et risus nex orci ornare condimentum. Nam suscipit odio lorem, id vestibulum lacus tristique eu. Sed urna ex, porttitor nec iaculis at, consectetur vel turpis. Vestibulum ultrices, felis in lacinia porttitor, tortor metus convallis augue, at fermentum diam erat nec quam. Nulla facilisi.
                   </p>
-                  <button>
-                        find out more
-                  </button>
+                  <button type="button">Find out more</button>
             </div>
-            <div class="copyright">
-                <p>
-                  Copyright ⓒ 2019 HackerYou
-                </p>
-            </div>
+      </section>
+
+      <footer class="copyright">
+            <p>
+            Copyright ⓒ 2019 HackerYou
+            </p>
       </footer>
+      
 
 </body>
 </html>
