@@ -289,6 +289,11 @@ button:focus {
   background-color: #FFC600;
 }
 
+a {
+  text-decoration: none;
+  outline: none;
+}
+
 li a {
   font-family: 'lato', Helvetica, Arial;
   color: #FAFFFE;
@@ -310,7 +315,7 @@ li:focus {
   border-bottom: 3px solid #FFC600;
   margin-bottom: 16px;
   font-weight: 300;
-  outline: 0;
+  outline: none;
 }
 
 li:focus a {
@@ -322,20 +327,12 @@ li:focus a {
   padding-bottom: 7px;
 }
 
-a {
-  text-decoration: none;
-}
-
 .highlight {
   color: #FFC600;
 }
 
 input {
   font-weight: 300;
-}
-
-fieldset {
-  font-size: 0px;
 }
 
 .wrapper {
@@ -490,6 +487,7 @@ form button {
 
 .homeHeader {
   background-image: url(../assets/home-image-1.jpg);
+  background-position-x: 100%;
 }
 
 h1 {
@@ -575,7 +573,7 @@ h1 span {
 }
 
 .blurbs {
-  padding: 7% 0 10% 0;
+  padding: 8% 0 10% 0;
 }
 
 .blurbContainer {
@@ -584,12 +582,18 @@ h1 span {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .blurbContainer div {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 40%;
-          flex: 1 1 40%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.blurbContainer div p {
+  padding: 0 15px 50px 75px;
 }
 
 .blurbContainer i {
@@ -599,7 +603,7 @@ h1 span {
   padding: 10px;
   border-radius: 50%;
   float: left;
-  margin: 0 20px 30% 0;
+  margin-right: 20px;
 }
 
 .blogBlurb i {
@@ -694,6 +698,7 @@ h1 span {
 
 .blogHeader {
   background-image: url(../assets/blog-image-1.jpg);
+  background-position-x: 80%;
 }
 
 .blogPost {
@@ -744,7 +749,11 @@ h1 span {
 
 .comments img {
   float: left;
-  padding: 1.5% 5% 140px 0;
+  padding: 1.5% 0 0px 0;
+}
+
+.comments p {
+  padding-left: 125px;
 }
 
 .commentDate {
@@ -753,7 +762,7 @@ h1 span {
 }
 
 .davin {
-  padding: 40px 0 120px 0;
+  padding: 40px 0 10% 0;
 }
 
 .blogForm {
@@ -882,9 +891,6 @@ aside li::before {
   .newAdventureContainer img {
     margin-top: 5%;
   }
-  .blurbContainer i {
-    margin: 0 15px 50% 2%;
-  }
   .contactForm {
     width: 50%;
   }
@@ -933,10 +939,6 @@ aside li::before {
         -ms-flex-align: center;
             align-items: center;
   }
-  .blurbContainer i,
-  .newAdventureContainer i {
-    margin-bottom: 15%;
-  }
   .newAdventureContainer img {
     width: 55%;
   }
@@ -975,6 +977,7 @@ aside li::before {
   }
   h4 {
     font-size: 20px;
+    line-height: 1;
   }
   p {
     font-size: 14px;
@@ -1007,9 +1010,6 @@ aside li::before {
     width: 70%;
     margin: 20px 0;
   }
-  .blurbContainer i {
-    margin-bottom: 20%;
-  }
   .readMore {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1035,10 +1035,7 @@ aside li::before {
   }
   aside p,
   aside li {
-    font-size: 12px;
-  }
-  aside h5 {
-    font-size: 20px;
+    font-size: 13px;
   }
   .contactInfo {
     display: block;
@@ -1066,8 +1063,27 @@ aside li::before {
   .ham i {
     font-size: 40px;
   }
-  .blurbContainer i {
-    margin-bottom: 30%;
+  .blogPost {
+    width: 100%;
+  }
+  aside {
+    position: relative;
+    width: 100%;
+    top: 40px;
+    margin-bottom: 40px;
+    padding-left: 5%;
+  }
+  .blogForm,
+  .comments {
+    width: 85%;
+  }
+  .blogForm img,
+  .comments img {
+    padding: 1% 25px 0  0;
+  }
+  .blogForm p,
+  .comments p {
+    padding: 5px 5% 0 0;
   }
   input,
   textarea {
